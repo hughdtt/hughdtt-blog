@@ -6,7 +6,7 @@ description: This is a blog
 ### Built settings ###
 
 url: "https://hughdtt.github.io"
-baseurl: "/blog"
+baseurl: "/hughdtt-site"
 
 github_username: Hughdtt
 
