@@ -1,4 +1,5 @@
 # Jekyll Actions Quickstart
+
 > Deploy a Jekyll 4 site to GH Pages using the "Jekyll Actions" action
 
 [![GH Pages CI](https://github.com/MichaelCurrin/jekyll-actions-quickstart/workflows/GH%20Pages%20CI/badge.svg)](https://github.com/MichaelCurrin/jekyll-actions-quickstart/actions?query=workflow:"GH+Pages+CI")
@@ -11,7 +12,6 @@
 [![Made with Jekyll](https://img.shields.io/badge/Jekyll-4.x-blue?logo=jekyll&logoColor=white)](https://jekyllrb.com)
 [![Made with Jekyll Actions](https://img.shields.io/badge/Jekyll_Actions-2.x-blue.svg)](https://github.com/marketplace/actions/jekyll-actions)
 
-
 ## Purpose
 
 A live demo and introduction around deploying Jekyll 4 to GitHub Pages - using a GitHub Actions workflow and the [Jekyll Actions](https://github.com/marketplace/actions/jekyll-actions) action. If you prefer to use a more generic Ruby action to setup your environment, see my related quickstart - [jekyll-github-actions-quickstart](https://github.com/MichaelCurrin/jekyll-github-actions-quickstart).
@@ -19,7 +19,6 @@ A live demo and introduction around deploying Jekyll 4 to GitHub Pages - using a
 The reason why we use GitHub Actions to build our Jekyll site is that it gives us more control of the environment and build flow. Like using Jekyll 4 instead of Jekyll 3, using custom gems and adding in shell, Python, or Node.js commands before the Jekyll build command.
 
 If you are new to GH Actions, see links and code snippets in my [Workflow Builder](https://michaelcurrin.github.io/workflow-builder/) project.
-
 
 ## How can I use Jekyll 4 with GitHub Actions?
 
@@ -68,15 +67,13 @@ The approaches have varying levels of security.
 - Some flows use the GitHub-generated `GITHUB_TOKEN`. This only has access to one repo during workflow a run, is never seen by a human and so is _very_ secure.
 - Other flows expect a user-generated Personal Access Token. This has access to update _all_ of your public repos and requires you to generate and store it. It might get abused by a vulnerable or malicious Action. It is _less_ secure.
 
-
 ## Documentation
+
 > How to install and run locally and deploy on GH Pages
 
 [![View - Documentation](https://img.shields.io/badge/View-Documentation-blue?style=for-the-badge)](/docs/)
 
+## License and links
 
-## License
-
-- Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin).
-- Feel free to modify and reuse this project. You are required to include the license when using this code. Copy `LICENSE` to `LICENSE-source` and then modify `LICENSE` with your own name.
-- Please link back to this repo.
+- Released under [MIT](/LICENSE) by [Hugh Duong-Tran-Tien](https://github.com/hughdtt)
+- Big thanks to [Michael Currin](https://github.com/MichaelCurrin/jekyll-actions-quickstart) for the amazing Jekyll Actions Quickstart
