@@ -14,12 +14,12 @@ title: Home
 
     <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
 
-    {{ post.content }}
+    <p>{{ post.excerpt }}</p>
   </article>
   {% endfor %}
 </div>
 
-<div class="pagination">
+<!-- <div class="pagination">
   {% if site.next_page %}
     <a class="pagination-item older" href="{{ site.next_page_path | relative_url }}">Older</a>
   {% else %}
@@ -30,4 +30,4 @@ title: Home
   {% else %}
     <span class="pagination-item newer">Newer</span>
   {% endif %}
-</div>
+</div> -->
