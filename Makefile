@@ -8,10 +8,10 @@ install:
 	bundle install
 
 s serve:
-	cd sample_site && \
+	cd site && \
 		bundle exec jekyll serve --destination ../build/ --trace --livereload
 
 .PHONY: build
 build:
-	cd sample_site && \
+	cd site && \
 		JEKYLL_ENV=production bundle exec jekyll build -d ../build --trace
