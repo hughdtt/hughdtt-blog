@@ -1,7 +1,7 @@
 # Hugh DuongTranTien Blog Site
 
 [![GH Pages CI](https://github.com/hughdtt/hughdtt-site/workflows/GH%20Pages%20CI/badge.svg)](https://github.com/MichaelCurrin/jekyll-actions-quickstart/actions?query=workflow:"GH+Pages+CI")
-[![GitHub tag](https://img.shields.io/github/tag/hughdtt/hughdtt-site)](https://github.com/MichaelCurrin/jekyll-actions-quickstart/tags/)
+[![GitHub tag](https://img.shields.io/github/tag/hughdtt/hughdtt-site)](https://github.com/hughdtt/hughdtt-site/tags/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 [![Hosted with GH Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/)
