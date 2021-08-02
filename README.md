@@ -1,7 +1,7 @@
 # Hugh DuongTranTien Blog Site
 
-[![GH Pages CI](https://github.com/MichaelCurrin/jekyll-actions-quickstart/workflows/GH%20Pages%20CI/badge.svg)](https://github.com/MichaelCurrin/jekyll-actions-quickstart/actions?query=workflow:"GH+Pages+CI")
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/jekyll-actions-quickstart)](https://github.com/MichaelCurrin/jekyll-actions-quickstart/tags/)
+[![GH Pages CI](https://github.com/hughdtt/hughdtt-site/workflows/GH%20Pages%20CI/badge.svg)](https://github.com/MichaelCurrin/jekyll-actions-quickstart/actions?query=workflow:"GH+Pages+CI")
+[![GitHub tag](https://img.shields.io/github/tag/hughdtt/hughdtt-site)](https://github.com/MichaelCurrin/jekyll-actions-quickstart/tags/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 [![Hosted with GH Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/)
@@ -19,4 +19,5 @@ Hugh's personal website running on Jekyll and Github pages.
 ## License and links
 
 - Released under [MIT](/LICENSE) by [Hugh Duong-Tran-Tien](https://github.com/hughdtt)
-- Big thanks to [Michael Currin](https://github.com/MichaelCurrin/jekyll-actions-quickstart) for the amazing Jekyll Actions Quickstart
+- Big thanks to [Michael Currin](https://github.com/MichaelCurrin/jekyll-actions-quickstart) for the amazing Jekyll Actions Quickstart that helped sort out the Github actions
+- Also thanks to the guys that help maintain [Poole] (https://github.com/poole/) - it helped get my head around directory structure and got me on the ground running
