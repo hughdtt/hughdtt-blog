@@ -1,4 +1,4 @@
-# Jekyll Actions Quickstart
+# Hugh DuongTranTien Blog Site
 
 [![GH Pages CI](https://github.com/MichaelCurrin/jekyll-actions-quickstart/workflows/GH%20Pages%20CI/badge.svg)](https://github.com/MichaelCurrin/jekyll-actions-quickstart/actions?query=workflow:"GH+Pages+CI")
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/jekyll-actions-quickstart)](https://github.com/MichaelCurrin/jekyll-actions-quickstart/tags/)
