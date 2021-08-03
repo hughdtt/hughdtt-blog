@@ -6,11 +6,13 @@
   padding-top: var(--spacer);
   padding-bottom: var(--spacer);
   margin-bottom: var(--spacer-3);
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .masthead-title {
   margin-bottom: 0;
-
+  flex-grow: 1;
   a {
     color: inherit;
     text-decoration: none;
@@ -20,4 +22,8 @@
     font-weight: 400;
     opacity: .5;
   }
+}
+
+.switch {
+  align-self: flex-end;
 }

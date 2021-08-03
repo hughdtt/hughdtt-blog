@@ -12,8 +12,8 @@
           <small>{{ site.tagline }}</small>
         </h3>
         <label id="switch" class="switch">
-          Light/ Dark Switch
-          <input type="checkbox" onchange="toggleTheme()" id="slider">
+          <span id="switch-label">Light/ Dark Switch</span>
+          <input type="checkbox" onchange="toggleTheme()" id="slider" hidden>
         </label>
       </header>
 
@@ -49,8 +49,10 @@
         function toggleTheme() {
             if (localStorage.getItem('theme') === 'theme-dark') {
                 setTheme('theme-light');
+                document.getElementById('switch-label').innerHTML = 'Lights.off()'
             } else {
                 setTheme('theme-dark');
+                document.getElementById('switch-label').innerHTML = 'Lights.on()'
             }
         }
 
@@ -58,10 +60,12 @@
         (function () {
             if (localStorage.getItem('theme') === 'theme-dark') {
                 setTheme('theme-dark');
-                document.getElementById('slider').checked = false;
+                document.getElementById('slider').checked = true;
+                document.getElementById('switch-label').innerHTML = 'Lights.on()'
             } else {
                 setTheme('theme-light');
-              document.getElementById('slider').checked = true;
+              document.getElementById('slider').checked = false;
+              document.getElementById('switch-label').innerHTML = 'Lights.off()'
             }
         })();
     </script>

@@ -19,7 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Hugh Duong-Tran-Tien
-description: This is a blog
+description: I'm Hugh, web developer, writer, and wannabe open-sourcerer.
+tagline: Jr. Dev
 
 ### Built settings ###
 

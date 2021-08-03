@@ -16,7 +16,7 @@ body {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
       
-  transition: var(--transition-delay);
+  transition: color 350ms ease 0s, background 350ms ease 0s;
   
 }
 
