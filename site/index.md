@@ -4,6 +4,7 @@ title: Home
 ---
 
 <div class="posts">
+  <h3>Recently published</h3>
   {% for post in site.posts %}
   <article class="post">
     <h1 class="post-title">

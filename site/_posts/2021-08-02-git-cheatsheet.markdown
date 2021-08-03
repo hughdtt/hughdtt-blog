@@ -9,6 +9,7 @@ Git is an amazing source control tool. But for those who are just learning to us
 Given that this is meant to be a cheatsheet, I'll keep things simple. I've added a little component below that you can switch between branch workflows and actually git commands cheatsheet.
 
 ## Cheatsheet
+<div class='half-bleed'>
 {% highlight powershell %}
 # Set a name that is identifiable for credit when review version history
 git config --global user.name “[firstname lastname]”
@@ -19,7 +20,7 @@ git config --global user.email “[valid-email]”
 # Set automatic command line coloring for Git for easy reviewing
 git config --global color.ui auto
 {% endhighlight %}
-
+</div>
 ## Workflow 
 But even then, using it is a hell of a lot easier if you had a clear picture or process of what to do. Luckily for you I have just the thing.
 
