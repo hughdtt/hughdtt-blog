@@ -28,7 +28,7 @@
       </footer>
     </div>
 
-    <!-- {% if site.ga_analytics %}
+    {% if site.ga_analytics %}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -36,15 +36,6 @@
        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
        ga('create', '{{ site.ga_analytics }}', 'auto');
        ga('send', 'pageview');
-    </script>
-    {% endif %} -->
-    {% if page.is_post %}
-    <script src="https://utteranc.es/client.js"
-        repo="https://github.com/hughdtt/hughdtt-site"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
     </script>
     {% endif %}
     <script>
@@ -59,26 +50,47 @@
             if (localStorage.getItem('theme') === 'theme-dark') {
                 setTheme('theme-light');
                 document.getElementById('switch-label').innerHTML = 'Lights.off()'
+                $('.utterances').remove();
+                loadUtterances(false);
             } else {
                 setTheme('theme-dark');
                 document.getElementById('switch-label').innerHTML = 'Lights.on()'
+                $('.utterances').remove();
+                loadUtterances(true);
             }
         }
 
         // Immediately invoked function to set the theme on initial load
         (function () {
             if (localStorage.getItem('theme') === 'theme-dark') {
-                setTheme('theme-dark');
-                document.getElementById('slider').checked = true;
-                document.getElementById('switch-label').innerHTML = 'Lights.on()'
+              setTheme('theme-dark');
+              document.getElementById('slider').checked = true;
+              document.getElementById('switch-label').innerHTML = 'Lights.on()'
+              loadUtterances(true)
             } else {
-                setTheme('theme-light');
+              setTheme('theme-light');
               document.getElementById('slider').checked = false;
               document.getElementById('switch-label').innerHTML = 'Lights.off()'
+              loadUtterances(false)
             }
         })();
 
-
+        //load comments
+        function loadUtterances(darkMode=false) {
+          const commentsContainer = document.getElementsByClassName("comments");
+          commentsContainer.innerHTML = ''
+          if (commentsContainer !== null){
+            const utterancesScript = document.createElement("script");
+            utterancesScript.setAttribute("id", "utterances");
+            utterancesScript.setAttribute("src", "https://utteranc.es/client.js");
+            utterancesScript.setAttribute("repo", "hughdtt/comments-hughdtt-site");
+            utterancesScript.setAttribute("issue-term", "title");
+            utterancesScript.setAttribute("theme", darkMode ? "photon-dark" : "github-light");
+            utterancesScript.setAttribute("crossorigin", "anonymous");
+            utterancesScript.setAttribute("async", "true");
+            commentsContainer[0].appendChild(utterancesScript)
+          }
+        }
     </script>
   </body>
 </html>

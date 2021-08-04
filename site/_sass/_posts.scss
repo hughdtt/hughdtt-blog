@@ -3,9 +3,14 @@
 // Each post is wrapped in `.post` and is used on default and post layouts. Each
 // page is wrapped in `.page` and is only used on the page layout.
 
+.main{
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 1em;
 
   li + li {
     margin-top: .25rem;
@@ -39,6 +44,10 @@
   color: var(--gray-600);
 }
 
+// Comments
+.comments {
+  margin-bottom: 4em;
+}
 
 // Related posts
 .related {
