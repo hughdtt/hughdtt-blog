@@ -3,47 +3,21 @@ layout: default
 title: Home
 ---
 
-<section class="wrapper">
-  <section class="posts featured">
-    <h2>Recently published</h2>
-    {% for post in site.posts %}
-    <article class="post">
-      <h1 class="post-title">
-        <a href="{{ post.url | relative_url }}">
-          {{ post.title }}
-        </a>
-      </h1>
+<section class="posts featured">
+  <h2>Recently published</h2>
+  {% for post in site.posts %}
+  <article class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-      <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
 
-      <p>{{ post.excerpt }}</p>
-    </article>
-    {% endfor %}
-  </section>
-  <section class="categories">
-    <h2>Top Categories</h2>
-      <ul>
-      {% assign categories_list = site.categories %}
-        {% if categories_list.first[0] == null %}
-          {% for category in categories_list limit: 8 %}
-            <li><a href="#{{ category }}">{{ category | capitalize }}</a></li>
-          {% endfor %}
-        {% else %}
-          {% for category in categories_list limit: 8 %}
-            <li><a href="#{{ tag[0] }}">{{ category[0] | capitalize }}</a></li>
-          {% endfor %}
-        {% endif %}
-      {% assign categories_list = nil %}
-      </ul>
-  </section>
-
-  <section class="popular">
-    <h2>Popular Content</h2>
-      {% assign popular_list = site.posts | where: 'featuredPost', true %}
-        {% for post in popular_list limit: 1 %}
-          <li><a href="#{{ post.title }}">{{ post.title }}</a></li>
-      {% endfor %}
-  </section>
+    <p>{{ post.excerpt }}</p>
+  </article>
+  {% endfor %}
 </section>
 
 

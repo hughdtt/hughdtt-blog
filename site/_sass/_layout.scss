@@ -14,25 +14,3 @@ footer {
   margin-top: var(--spacer-3);
   margin-bottom: var(--spacer-3);
 }
-
-//index
-.wrapper{
-  width: 75vw;
-  display: grid;
-  grid-template: "newest categories" 
-                  "newest popular" 1fr 
-                  / 2fr 1fr;
-  gap: 64px 96px;
-}
-
-.featured{
-  grid-area: newest;
-}
-
-.categories{
-  grid-area: categories;
-}
-
-.popular {
-  grid-area: popular;
-}
