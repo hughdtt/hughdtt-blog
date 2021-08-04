@@ -24,8 +24,8 @@ tagline: Jr. Dev
 
 ### Built settings ###
 
-url: "https://hughdtt.github.io"
-baseurl: "/hughdtt-site"
+url: "https://blog.hughdtt.com"
+baseurl: ""
 
 github_username: Hughdtt
 
