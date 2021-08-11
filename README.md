@@ -20,4 +20,4 @@ A little blog I'm running on Jekyll and Github pages. Wanted to try something th
 
 - Released under [MIT](/LICENSE) by [Hugh Duong-Tran-Tien](https://github.com/hughdtt)
 - Big thanks to [Michael Currin](https://github.com/MichaelCurrin/jekyll-actions-quickstart) for the amazing Jekyll Actions Quickstart that helped sort out the Github actions
-- Also thanks to the guys that help maintain [Poole] (https://github.com/poole/) for the theme - it helped get my head around directory structure and got me on the ground running
+- Also thanks to the guys that help maintain [Poole](https://github.com/poole/) for the theme - it helped get my head around directory structure and got me on the ground running
