@@ -1,4 +1,4 @@
-# Hugh Duong-Tran-Tien
+# blog.hughdtt.com
 
 [![GH Pages CI](https://github.com/hughdtt/hughdtt-site/workflows/GH%20Pages%20CI/badge.svg)](https://github.com/hughdtt/hughdtt-site/actions?query=workflow:"GH+Pages+CI")
 [![GitHub tag](https://img.shields.io/github/tag/hughdtt/hughdtt-site)](https://github.com/hughdtt/hughdtt-site/tags/)
