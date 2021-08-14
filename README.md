@@ -14,7 +14,7 @@
 
 A little blog I'm running on Jekyll and Github pages. Wanted to build with something light, easy to setup and maintain; I noticed that Github pages uses Jekyll in the background, and hey, if it's good enough for Github, it's good enough for me.
 
-**Note**: The source for this site was not created to be a template or theme, but for my own use. Feel free to take whatever inspiration from it that you want, but this code was not written with the intention of being cloned and deployed. As such, I do not provide support or guidance for doing that. The Jekyll site gets built through the Github Actions which I've pinched off Michael Currin's quickstart. You can see the build files in the gh-pages branch. 
+**Note**: The source for this site was not created to be a template or theme, but for my own use. Feel free to take whatever inspiration from it that you want, but this code was not written with the intention of being cloned and deployed. As such, I do not provide support or guidance for doing that. The Jekyll site gets built through the Github Actions which I've generated from Michael Currin's quickstart. You can see the build files in the gh-pages branch. 
 
 ## License and links
 - Released under [MIT](/LICENSE) by [Hugh Duong-Tran-Tien](https://github.com/hughdtt)
