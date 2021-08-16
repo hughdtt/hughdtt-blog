@@ -2,8 +2,8 @@
 layout: post
 title:  "Welcome to Git: The Cheatsheet"
 date:   2021-08-02 21:00:00 +1000
-categories: cheatsheet git
-featuredPost: true
+categories: cheatsheet programming
+featuredPost: false
 ---
 Git is an amazing source control tool. But for those who are just learning to use it in a team setting, it can be daunting to make changes knowing that it *could* potentially destory everything (I'm kidding). The beauty of Git is that even if you mess things up you can always just roll back to last working save. You can always rely on the fact that a senior engineer will swoop in to save the day if you have any questions or do something wrong. After all, the only way you're gonna get good at it is if you use it alot. 
 
