@@ -1,7 +1,7 @@
 # blog.hughdtt.com
 
-[![GH Pages CI](https://github.com/hughdtt/hughdtt-site/workflows/GH%20Pages%20CI/badge.svg)](https://github.com/hughdtt/hughdtt-site/actions?query=workflow:"GH+Pages+CI")
-[![GitHub tag](https://img.shields.io/github/tag/hughdtt/hughdtt-site)](https://github.com/hughdtt/hughdtt-site/tags/)
+[![GH Pages CI](https://github.com/hughdtt/hughdtt-blog/workflows/GH%20Pages%20CI/badge.svg)](https://github.com/hughdtt/hughdtt-blog/actions?query=workflow:"GH+Pages+CI")
+[![GitHub tag](https://img.shields.io/github/tag/hughdtt/hughdtt-blog)](https://github.com/hughdtt/hughdtt-blog/tags/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 [![Hosted with GH Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/)
