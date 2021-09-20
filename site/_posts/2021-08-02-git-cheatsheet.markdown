@@ -5,52 +5,72 @@ date:   2021-08-02 21:00:00 +1000
 categories: cheatsheet programming
 featuredPost: false
 ---
-Git is an amazing source control tool. But for those who are just learning to use it in a team setting, it can be daunting to make changes knowing that it *could* potentially destory everything (I'm kidding). The beauty of Git is that even if you mess things up you can always just roll back to last working save. You can always rely on the fact that a senior engineer will swoop in to save the day if you have any questions or do something wrong. After all, the only way you're gonna get good at it is if you use it alot. 
+Hey everyone! :wave: I've recently been experimenting and learning more about Git as a versioning control tool. Thought I would share some things I've learnt and also some quick snippets of what I use on a day-to-day basis. 
 
-Given that this is meant to be a cheatsheet, I'll keep things simple. I've added a little component below that you can switch between branch workflows and actually git commands cheatsheet.
+This is more of a guide for Git for Windows (as that is what I'm using). If you have installed Git, you should be able run Git Bash to run the unix commands. Another option is to install a Windows Subsystem for Linux (WSL) in VSCode and use that instead (my preference).
 
-## Cheatsheet
-<div class='half-bleed'>
-{% highlight powershell %}
-# Set a name that is identifiable for credit when review version history
-git config --global user.name “[firstname lastname]”
+## The basics
+Usually the first thing you learn in git is how to save your working directory onto a git branch
 
-# set an email address that will be associated with each history marker
-git config --global user.email “[valid-email]”
+```
+# Usually you do something like this
+git add . 
+git commit -m "Example update"
+```
 
-# Set automatic command line coloring for Git for easy reviewing
-git config --global color.ui auto
-{% endhighlight %}
-</div>
-## Workflow 
-But even then, using it is a hell of a lot easier if you had a clear picture or process of what to do. Luckily for you I have just the thing.
+You can actually save a bit of time by combining the add & commit into one line, like so
 
-If you're working on a new feature and don't want to touch the `MASTER` branch, you can make a new feature branch and use that instead.
+```
+# Add & Commit combined
+git commit -am "Cheeky one liner"
+```
+Neat! But there's actually an even faster way to do this - by using Aliases
 
-{% highlight powershell %}
-# Create a new feature branch
-git branch jc_new_feature
+The git config command allows you to create aliases that can shorten existing commands or create custom commands. For instance we can shorten this "-am" command to something like this
 
-# Checkout your new feature branch
-git checkout jc_new_feature
-{% endhighlight %}
+```
+# Create alias
+git config --global alias.ac "commit -am"
 
-Once a branch is set up, you'll just working on it until the feature is done and ready to merge to `MASTER`. I've added some commands I like to use to keep track of what's going on while I'm working.
+# So now we can do this
+git ac "Speedy!" // Equivalent of git commit -am "Speedy!"
+```
 
-{% highlight powershell %}
-# Check where you are and what's happening
-git status
-git log
+## Amend
+Sometimes a good commit message can be alot more valuable than a code comment.
 
-# Check the differences that haven't been added
-git diff
+A quick `git log` can show you a timeline of commits and give you picture of how the code has changed. Making a mistake on these messages can lead to confusion. 
 
-# If your happy with it, add all files to the stage
+So what if we wanted to change the message of our last commit?
+
+```
+# Change message of last commit
+git commit --amend -m "Fixed!"
+```
+
+And if you forgot to add some files that you want to commit aswell?
+
+```
+# Add everything
 git add .
 
-# Commit files with message
-git commit -m "Description of this commit"
+# Amend with the same message
+git commit --amend -no-edit
+```
+Keep in mind, this only works if you haven't pushed it to a remote repository. 
 
-# Optional (but recommended) push local branch to remote
-git push origin jc_feature_name
-{% endhighlight %}
+## Revert
+If you want to revert a previous commit that you pushed on a remote repository, you can use this command
+
+```
+git revert "[commit]"
+```
+
+## Codespaces
+This is probably the coolest thing I came across. Let's say you're somewhere and don't have VScode or Git installed. You can simply go to the github repository and tap the `.` key to open up a web instance of VScode where you commit make changes to the file there.
+
+That's all for now, but I'll make sure to keep this updated when I find new things! 
+
+Thanks! :)
+
+
