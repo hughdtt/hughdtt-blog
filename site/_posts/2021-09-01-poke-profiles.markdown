@@ -41,7 +41,7 @@ Currently, there's no hard validation warning when you type in a pokemon that do
 <details>
 <summary>Images</summary>
 <h5>Search functionality</h5>
-<img src="..\assets\poke-profiles\search.PNG" alt="search" />
+<img src="/assets/poke-profiles/search.PNG" alt="search" />
 </details>
 
 #### Pokemon details
@@ -68,7 +68,7 @@ When you do a search and the app is taking it's sweet time to bring you all the 
 <summary>Images</summary>
 
 <h5>Loading animation</h5>
-<img src="..\assets\poke-profiles\loading.PNG" alt="loading" />
+<img src="/assets/poke-profiles/loading.PNG" alt="loading" />
 </details>
 
 ## Challenges
