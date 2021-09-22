@@ -48,3 +48,4 @@ The source for this site was not created to be a template or theme, but for my o
 - Released under [MIT](/LICENSE) by [Hugh Duong-Tran-Tien](https://github.com/hughdtt)
 - Big thanks to [Michael Currin](https://github.com/MichaelCurrin/jekyll-actions-quickstart) for the amazing Jekyll Actions Quickstart that helped sort out the Github Pages CI pipelines.
 - Also thanks to the guys that help maintain [Poole](https://github.com/poole/) which I've used as a base theme to get me started.
+- Favicon generated from these [guys](https://favicon.io/favicon-generator/)
