@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A little passion project: Poke-Profiles"
-date:   2021-09-01 12:38:25 +1000
+date:   2021-09-22 12:38:25 +1000
 categories: programming project
 featuredPost: true
 excerpt: Hey all, I've been working on a little web app for the past month and half. I wanted to write a brief summary of the inspiration, process, what the current product looks like and perhaps a bit of reflection.
