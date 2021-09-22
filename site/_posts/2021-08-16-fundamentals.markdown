@@ -31,7 +31,7 @@ Early on I recognised one thing. I have no idea how to solve these problems. The
 
 So here's the moral of the story. Master the basics. Go back and really solidify your fundamentals. The bread and butter of the skillset. You should be able to rely on them just as you rely on breathing instinctively to live. There's a neat little article talking about it [here](https://medium.com/the-post-grad-survival-guide/acing-the-basics-why-fundamentals-are-everything-c20855c65b41). Credit to Dallas Blowers for the insightful read.  
 
-For those who want to skip the read. It basically re-iterates what I said. You shouldn't rush to progress, take the time to digest the basics. Learning to rely on them will be the difference between life and death (figuratively). But of course, it's not fun to just grind basic drills everyday. I think it takes a **intention** to apply those basics that will make the difference. See if you can do something fun or interesting with what you learnt. See if you forcibly use them the wrong way (to see what it doesn't work so well). Have fun with it people!
+For those who want to skip the read. It basically re-iterates what I said. You shouldn't rush to progress, take the time to digest the basics. Learning to rely on them will be the difference between life and death (figuratively). But of course, it's not fun to just grind basic drills everyday. I think it takes a **intention** to apply those basics that will make the difference. Maybe you can do something fun or crazy with what you just learnt. See if you can use them the wrong way (to see works and what doesn't). **But most importantly,** have fun with it people!
 
 Hope this serves you well.
 

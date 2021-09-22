@@ -5,7 +5,7 @@ date:   2021-08-02 21:00:00 +1000
 categories: cheatsheet programming
 featuredPost: false
 ---
-Hey everyone! :wave: I've recently been experimenting and learning more about Git as a versioning control tool. Thought I would share some things I've learnt and also some quick snippets of what I use on a day-to-day basis. 
+Hey everyone! 👋 I've recently been experimenting and learning more about Git as a versioning control tool. Thought I would share some things I've learnt and also some quick snippets of what I use on a day-to-day basis. 
 
 This is more of a guide for Git for Windows (as that is what I'm using). If you have installed Git, you should be able run Git Bash to run the unix commands. Another option is to install a Windows Subsystem for Linux (WSL) in VSCode and use that instead (my preference).
 
@@ -71,6 +71,6 @@ This is probably the coolest thing I came across. Let's say you're somewhere and
 
 That's all for now, but I'll make sure to keep this updated when I find new things! 
 
-Thanks! :)
+Thanks all! 😀
 
 
