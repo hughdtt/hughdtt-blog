@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Hugh Duong-Tran-Tien
+    
+  </title>
+
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="Hugh Duong-Tran-Tien" href="/atom.xml">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Home" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I’m Hugh, web developer, writer, and wannabe open-sourcerer." />
+<meta property="og:description" content="I’m Hugh, web developer, writer, and wannabe open-sourcerer." />
+<link rel="canonical" href="https://blog.hughdtt.com/" />
+<meta property="og:url" content="https://blog.hughdtt.com/" />
+<meta property="og:site_name" content="Hugh Duong-Tran-Tien" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Home" />
+<script type="application/ld+json">
+{"description":"I’m Hugh, web developer, writer, and wannabe open-sourcerer.","url":"https://blog.hughdtt.com/","@type":"WebSite","headline":"Home","name":"Hugh Duong-Tran-Tien","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+
+  <body>
+
+    <div class="container content">
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Hugh Duong-Tran-Tien</a>
+          <small>Jr. Dev</small>
+        </h3>
+        <label id="switch" class="switch">
+          <span id="switch-label">Light/ Dark Switch</span>
+          <input type="checkbox" onchange="toggleTheme()" id="slider" hidden>
+        </label>
+      </header>
+
+      <main>
+        <section class="posts featured">
+  <h2>Recently published</h2>
+  
+  <article class="post">
+    <h1 class="post-title">
+      <a href="/programming/project/2021/09/22/poke-profiles.html">
+        A little passion project: Poke-Profiles
+      </a>
+    </h1>
+
+    <time datetime="2021-09-22T02:38:25+00:00" class="post-date">22 Sep 2021</time>
+
+    <p>Hey all, I've been working on a little web app for the past month and half. I wanted to write a brief summary of the inspiration, process, what the current product looks like and perhaps a bit of reflection.</p>
+  </article>
+  
+  <article class="post">
+    <h1 class="post-title">
+      <a href="/rant/2021/08/15/fundamentals.html">
+        There's no fun in fundamentals
+      </a>
+    </h1>
+
+    <time datetime="2021-08-15T17:13:25+00:00" class="post-date">15 Aug 2021</time>
+
+    <p>But there is fun in fundamentals! I know, I know. If you have a little bit of time, I'd like to explore it a little further.</p>
+  </article>
+  
+  <article class="post">
+    <h1 class="post-title">
+      <a href="/cheatsheet/programming/2021/08/02/git-cheatsheet.html">
+        Welcome to Git: The Cheatsheet
+      </a>
+    </h1>
+
+    <time datetime="2021-08-02T11:00:00+00:00" class="post-date">02 Aug 2021</time>
+
+    <p><p>Hey everyone! 👋 I’ve recently been experimenting and learning more about Git as a versioning control tool. Thought I would share some things I’ve learnt and also some quick snippets of what I use on a day-to-day basis.</p>
+</p>
+  </article>
+  
+</section>
+
+<!-- <div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div> -->
+
+      </main>
+
+      <footer class="footer">
+        <small>
+          &copy; <time datetime="2021-09-22T03:34:52+00:00">2021</time>. All rights reserved.
+        </small>
+      </footer>
+    </div>
+
+    
+    <script>
+      // function to set a given theme/color-scheme
+      function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+        }
+
+        // function to toggle between light and dark theme
+        function toggleTheme() {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-light');
+                document.getElementById('switch-label').innerHTML = 'Lights.off()'
+                $('.utterances').remove();
+                loadUtterances(false);
+            } else {
+                setTheme('theme-dark');
+                document.getElementById('switch-label').innerHTML = 'Lights.on()'
+                $('.utterances').remove();
+                loadUtterances(true);
+            }
+        }
+
+        // Immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+              setTheme('theme-dark');
+              document.getElementById('slider').checked = true;
+              document.getElementById('switch-label').innerHTML = 'Lights.on()'
+              loadUtterances(true)
+            } else {
+              setTheme('theme-light');
+              document.getElementById('slider').checked = false;
+              document.getElementById('switch-label').innerHTML = 'Lights.off()'
+              loadUtterances(false)
+            }
+        })();
+
+        //load comments
+        function loadUtterances(darkMode=false) {
+          const commentsContainer = document.getElementsByClassName("comments");
+          commentsContainer.innerHTML = ''
+          if (commentsContainer !== null){
+            const utterancesScript = document.createElement("script");
+            utterancesScript.setAttribute("id", "utterances");
+            utterancesScript.setAttribute("src", "https://utteranc.es/client.js");
+            utterancesScript.setAttribute("repo", "hughdtt/comments-hughdtt-site");
+            utterancesScript.setAttribute("issue-term", "title");
+            utterancesScript.setAttribute("theme", darkMode ? "photon-dark" : "github-light");
+            utterancesScript.setAttribute("crossorigin", "anonymous");
+            utterancesScript.setAttribute("async", "true");
+            commentsContainer[0].appendChild(utterancesScript)
+          }
+        }
+    </script>
+  </body>
+</html>

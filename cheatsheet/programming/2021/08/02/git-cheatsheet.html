@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Welcome to Git: The Cheatsheet
+    
+  </title>
+
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="Hugh Duong-Tran-Tien" href="/atom.xml">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Welcome to Git: The Cheatsheet" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hey everyone! 👋 I’ve recently been experimenting and learning more about Git as a versioning control tool. Thought I would share some things I’ve learnt and also some quick snippets of what I use on a day-to-day basis." />
+<meta property="og:description" content="Hey everyone! 👋 I’ve recently been experimenting and learning more about Git as a versioning control tool. Thought I would share some things I’ve learnt and also some quick snippets of what I use on a day-to-day basis." />
+<link rel="canonical" href="https://blog.hughdtt.com/cheatsheet/programming/2021/08/02/git-cheatsheet.html" />
+<meta property="og:url" content="https://blog.hughdtt.com/cheatsheet/programming/2021/08/02/git-cheatsheet.html" />
+<meta property="og:site_name" content="Hugh Duong-Tran-Tien" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T11:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Welcome to Git: The Cheatsheet" />
+<script type="application/ld+json">
+{"description":"Hey everyone! 👋 I’ve recently been experimenting and learning more about Git as a versioning control tool. Thought I would share some things I’ve learnt and also some quick snippets of what I use on a day-to-day basis.","url":"https://blog.hughdtt.com/cheatsheet/programming/2021/08/02/git-cheatsheet.html","@type":"BlogPosting","headline":"Welcome to Git: The Cheatsheet","dateModified":"2021-08-02T11:00:00+00:00","datePublished":"2021-08-02T11:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.hughdtt.com/cheatsheet/programming/2021/08/02/git-cheatsheet.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+
+  <body>
+
+    <div class="container content">
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Hugh Duong-Tran-Tien</a>
+          <small>Jr. Dev</small>
+        </h3>
+        <label id="switch" class="switch">
+          <span id="switch-label">Light/ Dark Switch</span>
+          <input type="checkbox" onchange="toggleTheme()" id="slider" hidden>
+        </label>
+      </header>
+
+      <main>
+        <article class="post">
+  <h1 class="post-title">Welcome to Git: The Cheatsheet</h1>
+  <time datetime="2021-08-02T11:00:00+00:00" class="post-date">02 Aug 2021</time>
+  <p>Hey everyone! 👋 I’ve recently been experimenting and learning more about Git as a versioning control tool. Thought I would share some things I’ve learnt and also some quick snippets of what I use on a day-to-day basis.</p>
+
+<p>This is more of a guide for Git for Windows (as that is what I’m using). If you have installed Git, you should be able run Git Bash to run the unix commands. Another option is to install a Windows Subsystem for Linux (WSL) in VSCode and use that instead (my preference).</p>
+
+<h2 id="the-basics">The basics</h2>
+<p>Usually the first thing you learn in git is how to save your working directory onto a git branch</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Usually you do something like this
+git add . 
+git commit -m "Example update"
+</code></pre></div></div>
+
+<p>You can actually save a bit of time by combining the add &amp; commit into one line, like so</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Add &amp; Commit combined
+git commit -am "Cheeky one liner"
+</code></pre></div></div>
+<p>Neat! But there’s actually an even faster way to do this - by using Aliases</p>
+
+<p>The git config command allows you to create aliases that can shorten existing commands or create custom commands. For instance we can shorten this “-am” command to something like this</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Create alias
+git config --global alias.ac "commit -am"
+
+# So now we can do this
+git ac "Speedy!" // Equivalent of git commit -am "Speedy!"
+</code></pre></div></div>
+
+<h2 id="amend">Amend</h2>
+<p>Sometimes a good commit message can be alot more valuable than a code comment.</p>
+
+<p>A quick <code class="language-plaintext highlighter-rouge">git log</code> can show you a timeline of commits and give you picture of how the code has changed. Making a mistake on these messages can lead to confusion.</p>
+
+<p>So what if we wanted to change the message of our last commit?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Change message of last commit
+git commit --amend -m "Fixed!"
+</code></pre></div></div>
+
+<p>And if you forgot to add some files that you want to commit aswell?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Add everything
+git add .
+
+# Amend with the same message
+git commit --amend -no-edit
+</code></pre></div></div>
+<p>Keep in mind, this only works if you haven’t pushed it to a remote repository.</p>
+
+<h2 id="revert">Revert</h2>
+<p>If you want to revert a previous commit that you pushed on a remote repository, you can use this command</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git revert "[commit]"
+</code></pre></div></div>
+
+<h2 id="codespaces">Codespaces</h2>
+<p>This is probably the coolest thing I came across. Let’s say you’re somewhere and don’t have VScode or Git installed. You can simply go to the github repository and tap the <code class="language-plaintext highlighter-rouge">.</code> key to open up a web instance of VScode where you commit make changes to the file there.</p>
+
+<p>That’s all for now, but I’ll make sure to keep this updated when I find new things!</p>
+
+<p>Thanks all! 😀</p>
+
+
+</article>
+
+<article class="comments">
+</article>
+
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/programming/project/2021/09/22/poke-profiles.html">
+          A little passion project: Poke-Profiles
+          <small><time datetime="2021-09-22T02:38:25+00:00">22 Sep 2021</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/rant/2021/08/15/fundamentals.html">
+          There's no fun in fundamentals
+          <small><time datetime="2021-08-15T17:13:25+00:00">15 Aug 2021</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+
+
+
+      </main>
+
+      <footer class="footer">
+        <small>
+          &copy; <time datetime="2021-09-22T03:34:52+00:00">2021</time>. All rights reserved.
+        </small>
+      </footer>
+    </div>
+
+    
+    <script>
+      // function to set a given theme/color-scheme
+      function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+        }
+
+        // function to toggle between light and dark theme
+        function toggleTheme() {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-light');
+                document.getElementById('switch-label').innerHTML = 'Lights.off()'
+                $('.utterances').remove();
+                loadUtterances(false);
+            } else {
+                setTheme('theme-dark');
+                document.getElementById('switch-label').innerHTML = 'Lights.on()'
+                $('.utterances').remove();
+                loadUtterances(true);
+            }
+        }
+
+        // Immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+              setTheme('theme-dark');
+              document.getElementById('slider').checked = true;
+              document.getElementById('switch-label').innerHTML = 'Lights.on()'
+              loadUtterances(true)
+            } else {
+              setTheme('theme-light');
+              document.getElementById('slider').checked = false;
+              document.getElementById('switch-label').innerHTML = 'Lights.off()'
+              loadUtterances(false)
+            }
+        })();
+
+        //load comments
+        function loadUtterances(darkMode=false) {
+          const commentsContainer = document.getElementsByClassName("comments");
+          commentsContainer.innerHTML = ''
+          if (commentsContainer !== null){
+            const utterancesScript = document.createElement("script");
+            utterancesScript.setAttribute("id", "utterances");
+            utterancesScript.setAttribute("src", "https://utteranc.es/client.js");
+            utterancesScript.setAttribute("repo", "hughdtt/comments-hughdtt-site");
+            utterancesScript.setAttribute("issue-term", "title");
+            utterancesScript.setAttribute("theme", darkMode ? "photon-dark" : "github-light");
+            utterancesScript.setAttribute("crossorigin", "anonymous");
+            utterancesScript.setAttribute("async", "true");
+            commentsContainer[0].appendChild(utterancesScript)
+          }
+        }
+    </script>
+  </body>
+</html>

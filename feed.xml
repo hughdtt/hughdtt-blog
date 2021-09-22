@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://blog.hughdtt.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.hughdtt.com/" rel="alternate" type="text/html" /><updated>2021-09-22T03:34:52+00:00</updated><id>https://blog.hughdtt.com/feed.xml</id><title type="html">Hugh Duong-Tran-Tien</title><subtitle>I'm Hugh, web developer, writer, and wannabe open-sourcerer.</subtitle><entry><title type="html">A little passion project: Poke-Profiles</title><link href="https://blog.hughdtt.com/programming/project/2021/09/22/poke-profiles.html" rel="alternate" type="text/html" title="A little passion project: Poke-Profiles" /><published>2021-09-22T02:38:25+00:00</published><updated>2021-09-22T02:38:25+00:00</updated><id>https://blog.hughdtt.com/programming/project/2021/09/22/poke-profiles</id><content type="html" xml:base="https://blog.hughdtt.com/programming/project/2021/09/22/poke-profiles.html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Hey everyone, 
+Happy to update that I’ve just wrapped up the first release of a little project that I’ve been working on called Poke-Profiles! It’s been a bit of a challenge to get together some time after work/ weekends to spend time on this. However, I’ve finally managed to get it to a point where I’m fairly happy with it. I wouldn’t call it perfect but I had a pretty good crack at it. I’m actually quite proud of the result. It’s possibly the best thing I’ve been able to produce all on my own. You’ll be able to have a look at it &lt;a href=&quot;https://github.com/hughdtt/poke-profiles&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;inspiration&quot;&gt;Inspiration&lt;/h2&gt;
+
+&lt;p&gt;I’m trying to remember exactly what kickstarted the sudden surge of motivation to start a project &lt;em&gt;and then&lt;/em&gt; try to get it completed. Anyway, somehow while browsing the internet I stumbled upon &lt;a href=&quot;https://dribbble.com/shots/2859891--025-Pikachu/attachments/2859891?mode=media&quot;&gt;this&lt;/a&gt;. My first immediate thought was ‘this is so epic’. The second thought was ‘wait at minute, I remember coming across a PokeAPI library a while ago. Shouldn’t I be able to make this?’. And so, off I went.&lt;/p&gt;
+
+&lt;h2 id=&quot;planning&quot;&gt;Planning&lt;/h2&gt;
+
+&lt;p&gt;I have a tendency to procrastinate on youtube. &lt;em&gt;Don’t judge me, I’m sure everyone does.&lt;/em&gt; Regardless, I stumbled across this guy - &lt;a href=&quot;https://www.florin-pop.com/&quot;&gt;Florin Pop&lt;/a&gt;. He did a fantastic challenge called “10 coding projects in 10 hours”. I felt super inspired by this and a lot of the javascript groundwork stems from these projects. You can check out the github &lt;a href=&quot;https://github.com/florinpop17/10-projects-10-hours&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Anyway, enough fanboying. I basically used these projects to set out a scope, technology stack and architecture. I didn’t really want/ need to build a full on fullstack application (like the ones I do for work). Reason being that it would take a lot of work and there’s only one me with not a lot of time. When in doubt, I can always rely on the basics. Simple HTML/CSS/Javascript will do the job. Since it’s my project, I can make it as simple or as complicated as I want. That’s a freedom I can afford. Of course there are drawbacks and advantages to just using vanilla javascript but I’ll take it as a learning exprience.&lt;/p&gt;
+
+&lt;p&gt;The main star of the project really though is &lt;a href=&quot;https://github.com/PokeAPI/pokeapi/&quot;&gt;PokeAPI&lt;/a&gt;. All I really need to do is connect this to my page and when I do a search for a pokemon, it’ll bring me all the information I can possible want about that searched pokemon. It’s like magic.&lt;/p&gt;
+
+&lt;p&gt;The main challenge is then implementing the layout and make it look impressive. It needs to work across mobile and desktop platforms - in this project I worked with a mobile-first design strategy. You can read more about it &lt;a href=&quot;https://css-tricks.com/how-to-develop-and-test-a-mobile-first-design-in-2021/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The second challenge is optimization, I want the experience to feel seamless and fast. Luckily for me, the guys at PokeAPI also made a little javascript wrapper that uses serviceworkers to sort out caching for images. Basically that means once you load an image, it hangs around so that if you search the same pokemon again it’ll load faster.&lt;/p&gt;
+
+&lt;p&gt;With those things nutted out, I was ready to get cracking.&lt;/p&gt;
+
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+
+&lt;h4 id=&quot;search-function&quot;&gt;Search function&lt;/h4&gt;
+
+&lt;p&gt;There’s a jQuery UI widget integrated into the app to sort out the search functionality. Basically works as you would expect. Type in any letter and it’ll filter search for a list of relevant pokemon in alphabetical order. It’ll also highlight the letters you search for aswell, neat!&lt;/p&gt;
+
+&lt;p&gt;You can search by either clicking a select option or typing out the name entirely and pressing enter.&lt;/p&gt;
+
+&lt;p&gt;Currently, there’s no hard validation warning when you type in a pokemon that doesn’t exist. There’s a little unintended feature from the search filter that tells you it didn’t find any pokemon with your search parameters though. Kinda serves the same purpose, but doesn’t let you know a search as failed on submission. (&lt;em&gt;I’ll add this later, I swear&lt;/em&gt;)&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Images&lt;/summary&gt;
+&lt;h5&gt;Search functionality&lt;/h5&gt;
+&lt;img src=&quot;/assets/poke-profiles/search.PNG&quot; alt=&quot;search&quot; /&gt;
+&lt;/details&gt;
+
+&lt;h4 id=&quot;pokemon-details&quot;&gt;Pokemon details&lt;/h4&gt;
+
+&lt;p&gt;When you do a search, you should get the following details:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pokemon ID&lt;/li&gt;
+  &lt;li&gt;Pokemon Name&lt;/li&gt;
+  &lt;li&gt;Pokemon Japanese Name&lt;/li&gt;
+  &lt;li&gt;Height&lt;/li&gt;
+  &lt;li&gt;Weight&lt;/li&gt;
+  &lt;li&gt;Region&lt;/li&gt;
+  &lt;li&gt;Type (as image)&lt;/li&gt;
+  &lt;li&gt;Stats (HP/ Attack/ Defense/ Sp Attack/ Sp Defense/ Speed)&lt;/li&gt;
+  &lt;li&gt;A randomly chosen pokemon description (some of you may recognize it’s the official pokedex entry description from the anime)&lt;/li&gt;
+  &lt;li&gt;The background color will also change depending on the pokemon’s primary type&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The information layout is slightly different for mobile version because it looked better that way.&lt;/p&gt;
+
+&lt;h4 id=&quot;loading-icon&quot;&gt;Loading icon&lt;/h4&gt;
+
+&lt;p&gt;When you do a search and the app is taking it’s sweet time to bring you all the information, you should see a loading icon until it’s ready to show you the pokemon.&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Images&lt;/summary&gt;
+
+&lt;h5&gt;Loading animation&lt;/h5&gt;
+&lt;img src=&quot;/assets/poke-profiles/loading.PNG&quot; alt=&quot;loading&quot; /&gt;
+&lt;/details&gt;
+
+&lt;h2 id=&quot;challenges&quot;&gt;Challenges&lt;/h2&gt;
+&lt;p&gt;I don’t really want to make you sit here and read through all the challenges I went through so I’ll just riff off that main ones and how I overcame them.&lt;/p&gt;
+
+&lt;h4 id=&quot;problem-1---sticking-to-the-design-layout&quot;&gt;Problem 1 - Sticking to the design layout&lt;/h4&gt;
+&lt;p&gt;As you can tell, the layout for the desktop version is not really in a standard web template. I had to experiment quite a bit to get it really nice the way it is. Of course, you can also tell it doesn’t match the design template 100%. Reason for this was because the image size gets really pixelated when I scale it up. Since I’m grabbing the image from an API and don’t really want to do anything more than scaling it up. I can just re-arrange things to make it look nice. In this case, I should treat the design template as a guide rather than strict ruleset. Plus, it was a really good experience to train my eye for these type of things. I used CSS Grid to implement the design and let me tell you, the &lt;strong&gt;MVP Tool&lt;/strong&gt; was the firefox developer console. It makes generates grid guidelines which make it really easy to see whether things align and helps me positions things easier. (Also helped me get my head around CSS Grid as I had never really used it before - TLDR; you should basically treat it like excel cells)&lt;/p&gt;
+
+&lt;h4 id=&quot;problem-2---loading-times&quot;&gt;Problem 2 - Loading times&lt;/h4&gt;
+&lt;p&gt;In an effort to make my code look cleaner, I re-wrote some things and wrapped the API calls in async/ await functions. I also figured out that I could get the Japanese translations from the API call as well - but this needed me to make two API calls instead of one. This actually slowed down my code a little bit since the second call would have to wait for the first call to finish before executing. I haven’t been able to find a good solution that I could easily implement. The next best thing was to add a loader animation so that at least the user would know to wait rather than just looking at a frozen screen until something changed.&lt;/p&gt;
+
+&lt;h2 id=&quot;looking-backwards&quot;&gt;Looking backwards&lt;/h2&gt;
+&lt;p&gt;I know the application isn’t perfect. There’s little bits here and there that could use some work. I’ve tried my hardest to crack down on the majority of bugs and feature enhancements to get it to its current state. I think if I don’t do a bit of reflection now to remind myself what the original goal of the project was, I might get caught up on a perpetual loop of enhancing these minor things to make it perfect.&lt;/p&gt;
+
+&lt;p&gt;While that’s nice to do, I don’t think there’s much progress to be had in spending an extra chunk of time sorting them out. I’m a big believer in the 80/20 rule and I think it applies here pretty well.&lt;/p&gt;
+
+&lt;p&gt;I started just wanting to build &lt;em&gt;someting&lt;/em&gt;. I wrung out a scope and mostly stuck to it. I built a fairly awesome looking site and wrote documentation for it. I learnt so much along the way; got to understand what I’m comfortable doing and what my shortcomings are. It’s not about the destination but the journey. Plus I’ve used up the initial spark of motivation weeks ago. My discipline has gotten me this far and I only have a little bit of strength left to write down my thoughts and plans for the future if I ever decide to revist the project.&lt;/p&gt;
+
+&lt;h2 id=&quot;looking-forwards&quot;&gt;Looking forwards&lt;/h2&gt;
+&lt;p&gt;Now that I’m writing this reflection piece, I’m actually feeling quite fulfilled with the amount of work I’ve been able to get done. I’m also a little excited to wait a while and get back to work on it. Which is good I think!&lt;/p&gt;
+
+&lt;p&gt;Like I said, I’ve tried to keep documentation up to date on the github repository. There’s a list of changelogs there. But basically the major things to work on are the loading times and perhaps a refactor. It could also do with some fancy animations and sounds effects. Oh! And I should probably get the cool pagination things done. I’m imagining a little scrolling effect I could add. There’s actually a bit to do!&lt;/p&gt;
+
+&lt;p&gt;For another time though. 😀&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping up&lt;/h2&gt;
+&lt;p&gt;That’s all folks! Thanks for reading until the end. If you’re interested in what else I have to say, you can check out my other posts below.&lt;/p&gt;
+
+&lt;p&gt;Hugh&lt;/p&gt;</content><author><name></name></author><category term="programming" /><category term="project" /><summary type="html">Hey all, I've been working on a little web app for the past month and half. I wanted to write a brief summary of the inspiration, process, what the current product looks like and perhaps a bit of reflection.</summary></entry><entry><title type="html">There’s no fun in fundamentals</title><link href="https://blog.hughdtt.com/rant/2021/08/15/fundamentals.html" rel="alternate" type="text/html" title="There’s no fun in fundamentals" /><published>2021-08-15T17:13:25+00:00</published><updated>2021-08-15T17:13:25+00:00</updated><id>https://blog.hughdtt.com/rant/2021/08/15/fundamentals</id><content type="html" xml:base="https://blog.hughdtt.com/rant/2021/08/15/fundamentals.html">&lt;h2 id=&quot;first-things-first&quot;&gt;First things first&lt;/h2&gt;
+&lt;p&gt;Please excuse the bad humour in the title. It’s 2AM and I just had a flash of inspiration to write down some thoughts; a little food for thought for those who want/need to hear it. &lt;strong&gt;Full warning, no TL;DR for this one&lt;/strong&gt;. If a wall of text intimidates you, I won’t scoff at you for leaving. Or maybe I will? Guess we’ll find out.&lt;/p&gt;
+
+&lt;h2 id=&quot;second-things-second&quot;&gt;Second things second&lt;/h2&gt;
+&lt;p&gt;&lt;del&gt;Un&lt;/del&gt;Fortunately, recent developments in my life have sort of forced me out of my comfort zone and into somewhat of a &lt;em&gt;uh-oh-panic-zone&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Why? Simple - job interviews.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;More specifically&lt;/em&gt;, algorithms. I know. Yuck. Well… actually, now that I’ve been studying them for a couple of weeks, algorithmic thinking is actually kinda cool. What’s not cool, is staying up to 2AM and furiously sipping my tea because I can’t seem to figure out what’s wrong with my code. Anyway, I digress. To keep things short, I’m planning to be out in the job market again soon.&lt;/p&gt;
+
+&lt;p&gt;And for those you don’t know, I’ve only just started my career. So my experience in job-hunting is, &lt;em&gt;how should I say&lt;/em&gt;, close to zero. I got very lucky to land an internship and then even luckier to turn that into a temporary full-time position until the end of the year. As such, I don’t really know what typical employers want or are looking for. All I have is a handful of anecdotal evidence from work mates and opinions on reddit. Oh, and a whole bunch of ex-techleads turned youtubers who have likely skewed my understanding of job-seeking as a junior developer.&lt;/p&gt;
+
+&lt;p&gt;From my own experience and what I have been told, in the tech industry, job interviews usually mean code interviews. For those who have the pleasure of not knowing the kind of nerve-wracking life-altering experience that can be, good for you. I’m happy for you. I’ve done a couple before and trust me when I say they’re not fun. Please pray for me if you have time. If you don’t that’s okay too. Just know any love is appreciated so please send them my way.&lt;/p&gt;
+
+&lt;p&gt;Anyway, yeah. Finding a new job = having to take some code interviews. For junior devs, in general, they involve being given a computational problem and coming up with an algorithm to provide a solution to said problem. This usually happens one on one with another senior dev. &lt;em&gt;Imagine doing a math test alone in a room with your teacher as they breathe down your neck judging everything you write. That pretty much sums up what it feels like.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;That being said, coming up with a “correct” solution isn’t usually the goal - it’s really meant to help the senior dev gauge your coding ability and communication skills. There’s a bunch of debate on whether this system is appropriate (or even good) but that’s a topic for another day. I want to talk about me. The reason I don’t like them is because I suck at them. Reason being, these interviews don’t have test you on the stuff you’ll be doing on the job, they test your theory skills. In practice, most jobs teach devs skills that revolve around the business product, not algorithmic thinking. Anywho, just in case, I thought I should do some study. And turns out I’m actually quite enjoying it so it’s not all bad.&lt;/p&gt;
+
+&lt;h2 id=&quot;learnings&quot;&gt;Learnings&lt;/h2&gt;
+
+&lt;p&gt;Early on I recognised one thing. I have no idea how to solve these problems. The reason why I had no idea was because my fundamentals were lacking. There was nothing for me to rely on when I got stuck. I was perpetually stuck in a loop of trial-and-error and brute-forcing solutions, and when that didn’t work, I gave up.&lt;/p&gt;
+
+&lt;p&gt;So here’s the moral of the story. Master the basics. Go back and really solidify your fundamentals. The bread and butter of the skillset. You should be able to rely on them just as you rely on breathing instinctively to live. There’s a neat little article talking about it &lt;a href=&quot;https://medium.com/the-post-grad-survival-guide/acing-the-basics-why-fundamentals-are-everything-c20855c65b41&quot;&gt;here&lt;/a&gt;. Credit to Dallas Blowers for the insightful read.&lt;/p&gt;
+
+&lt;p&gt;For those who want to skip the read. It basically re-iterates what I said. You shouldn’t rush to progress, take the time to digest the basics. Learning to rely on them will be the difference between life and death (figuratively). But of course, it’s not fun to just grind basic drills everyday. I think it takes a &lt;strong&gt;intention&lt;/strong&gt; to apply those basics that will make the difference. Maybe you can do something fun or crazy with what you just learnt. See if you can use them the wrong way (to see works and what doesn’t). &lt;strong&gt;But most importantly,&lt;/strong&gt; have fun with it people!&lt;/p&gt;
+
+&lt;p&gt;Hope this serves you well.&lt;/p&gt;
+
+&lt;p&gt;Hugh&lt;/p&gt;</content><author><name></name></author><category term="rant" /><summary type="html">But there is fun in fundamentals! I know, I know. If you have a little bit of time, I'd like to explore it a little further.</summary></entry><entry><title type="html">Welcome to Git: The Cheatsheet</title><link href="https://blog.hughdtt.com/cheatsheet/programming/2021/08/02/git-cheatsheet.html" rel="alternate" type="text/html" title="Welcome to Git: The Cheatsheet" /><published>2021-08-02T11:00:00+00:00</published><updated>2021-08-02T11:00:00+00:00</updated><id>https://blog.hughdtt.com/cheatsheet/programming/2021/08/02/git-cheatsheet</id><content type="html" xml:base="https://blog.hughdtt.com/cheatsheet/programming/2021/08/02/git-cheatsheet.html">&lt;p&gt;Hey everyone! 👋 I’ve recently been experimenting and learning more about Git as a versioning control tool. Thought I would share some things I’ve learnt and also some quick snippets of what I use on a day-to-day basis.&lt;/p&gt;
+
+&lt;p&gt;This is more of a guide for Git for Windows (as that is what I’m using). If you have installed Git, you should be able run Git Bash to run the unix commands. Another option is to install a Windows Subsystem for Linux (WSL) in VSCode and use that instead (my preference).&lt;/p&gt;
+
+&lt;h2 id=&quot;the-basics&quot;&gt;The basics&lt;/h2&gt;
+&lt;p&gt;Usually the first thing you learn in git is how to save your working directory onto a git branch&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Usually you do something like this
+git add . 
+git commit -m &quot;Example update&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can actually save a bit of time by combining the add &amp;amp; commit into one line, like so&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Add &amp;amp; Commit combined
+git commit -am &quot;Cheeky one liner&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Neat! But there’s actually an even faster way to do this - by using Aliases&lt;/p&gt;
+
+&lt;p&gt;The git config command allows you to create aliases that can shorten existing commands or create custom commands. For instance we can shorten this “-am” command to something like this&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Create alias
+git config --global alias.ac &quot;commit -am&quot;
+
+# So now we can do this
+git ac &quot;Speedy!&quot; // Equivalent of git commit -am &quot;Speedy!&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;amend&quot;&gt;Amend&lt;/h2&gt;
+&lt;p&gt;Sometimes a good commit message can be alot more valuable than a code comment.&lt;/p&gt;
+
+&lt;p&gt;A quick &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log&lt;/code&gt; can show you a timeline of commits and give you picture of how the code has changed. Making a mistake on these messages can lead to confusion.&lt;/p&gt;
+
+&lt;p&gt;So what if we wanted to change the message of our last commit?&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Change message of last commit
+git commit --amend -m &quot;Fixed!&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And if you forgot to add some files that you want to commit aswell?&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Add everything
+git add .
+
+# Amend with the same message
+git commit --amend -no-edit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Keep in mind, this only works if you haven’t pushed it to a remote repository.&lt;/p&gt;
+
+&lt;h2 id=&quot;revert&quot;&gt;Revert&lt;/h2&gt;
+&lt;p&gt;If you want to revert a previous commit that you pushed on a remote repository, you can use this command&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git revert &quot;[commit]&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;codespaces&quot;&gt;Codespaces&lt;/h2&gt;
+&lt;p&gt;This is probably the coolest thing I came across. Let’s say you’re somewhere and don’t have VScode or Git installed. You can simply go to the github repository and tap the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; key to open up a web instance of VScode where you commit make changes to the file there.&lt;/p&gt;
+
+&lt;p&gt;That’s all for now, but I’ll make sure to keep this updated when I find new things!&lt;/p&gt;
+
+&lt;p&gt;Thanks all! 😀&lt;/p&gt;</content><author><name></name></author><category term="cheatsheet" /><category term="programming" /><summary type="html">Hey everyone! 👋 I’ve recently been experimenting and learning more about Git as a versioning control tool. Thought I would share some things I’ve learnt and also some quick snippets of what I use on a day-to-day basis.</summary></entry></feed>
