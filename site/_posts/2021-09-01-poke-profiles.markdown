@@ -8,7 +8,6 @@ excerpt: Hey all, I've been working on a little web app for the past month and h
 ---
 ## Introduction
 Hey everyone, 
-
 Happy to update that I've just wrapped up the first release of a little project that I've been working on called Poke-Profiles! It's been a bit of a challenge to get together some time after work/ weekends to spend time on this. However, I've finally managed to get it to a point where I'm fairly happy with it. I wouldn't call it perfect but I had a pretty good crack at it. I'm actually quite proud of the result. It's possibly the best thing I've been able to produce all on my own. You'll be able to have a look at it [here](https://github.com/hughdtt/poke-profiles). 
 
 ## Inspiration
